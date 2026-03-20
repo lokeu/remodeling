@@ -1,0 +1,223 @@
+/* Services Row */
+.services-list .container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.service-row {
+  display: flex;
+  align-items: center;
+}
+.service-text {
+  background: var(--bg-white);
+  padding: 50px 60px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(0, 0, 0, 0.03);
+  flex: 1;
+  position: relative;
+  /* Clean tile joint aesthetic on the background */
+  background-image:
+    linear-gradient(var(--bg-white), var(--bg-white)),
+    linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.02) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.02) 50%,
+      rgba(0, 0, 0, 0.02) 75%,
+      transparent 75%,
+      transparent
+    );
+  background-size:
+    100% 100%,
+    20px 20px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+.service-text:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+}
+.service-text h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+.service-text p {
+  font-size: 1.15rem;
+  color: var(--secondary);
+  margin-bottom: 24px;
+}
+.service-text ul {
+  padding-left: 24px;
+  color: var(--secondary);
+  font-size: 1.05rem;
+}
+.service-text ul li {
+  margin-bottom: 12px;
+  position: relative;
+  list-style: none;
+}
+.service-text ul li::before {
+  content: "";
+  position: absolute;
+  left: -24px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: 2px; /* Square bullet for tile feel */
+}
+
+/* FAQ Accordion */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faq-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+}
+.faq-question h3 {
+  font-size: 1.15rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin: 0;
+}
+.faq-toggle {
+  font-size: 1.5rem;
+  color: var(--accent);
+  transition: transform 0.3s ease;
+  font-weight: 300;
+  line-height: 1;
+}
+.faq-item.active {
+  border-color: var(--accent);
+  box-shadow: 0 10px 25px rgba(236, 0, 138, 0.1);
+}
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 30px;
+}
+.faq-item.active .faq-answer {
+  padding-bottom: 24px;
+}
+.faq-answer p {
+  color: var(--secondary);
+  border-top: 1px dashed var(--border);
+  padding-top: 20px;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .service-text {
+    padding: 30px 24px;
+  }
+}
+
+/* Price Guide Section */
+.price-guide-section {
+  padding: 100px 0;
+}
+.price-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  margin-bottom: 32px;
+}
+.price-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 40px 28px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.price-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.price-card.featured {
+  border-color: var(--accent);
+  box-shadow: 0 10px 30px rgba(217, 119, 87, 0.15);
+}
+.price-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: white;
+  padding: 6px 20px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.price-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+.price-card h3 {
+  font-size: 1.2rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.price-range {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+.price-range strong {
+  color: var(--accent);
+}
+.price-desc {
+  font-size: 0.95rem;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+.price-note {
+  text-align: center;
+  color: var(--secondary);
+  font-size: 0.9rem;
+  padding: 16px 24px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  border: 1px dashed var(--border);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .price-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

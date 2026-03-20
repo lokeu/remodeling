@@ -1,0 +1,184 @@
+/* Story Box */
+.story-box {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+}
+.story-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: var(--primary);
+  font-weight: 700;
+}
+.story-box p {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--secondary);
+  line-height: 1.9;
+  position: relative;
+  padding: 0 40px;
+}
+.story-box p::before,
+.story-box p::after {
+  content: '"';
+  font-size: 4rem;
+  color: rgba(236, 0, 138, 0.15);
+  position: absolute;
+  font-family: serif;
+  line-height: 1;
+}
+.story-box p::before {
+  top: -20px;
+  left: 0;
+}
+.story-box p::after {
+  bottom: -40px;
+  right: 0;
+}
+
+/* Process Timeline */
+.process-timeline {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 40px;
+}
+.process-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--border);
+  border-radius: 4px;
+}
+.process-step {
+  position: relative;
+  margin-bottom: 40px;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+}
+.process-step:last-child {
+  margin-bottom: 0;
+}
+.step-icon {
+  position: absolute;
+  left: -64px;
+  top: 30px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: 0 0 0 6px var(--bg-light);
+  z-index: 2;
+}
+.process-step h3 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.process-step p {
+  color: var(--secondary);
+}
+
+/* Section Title (standalone h2) */
+.section-title {
+  font-size: 2.2rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .process-timeline {
+    padding-left: 30px;
+  }
+  .step-icon {
+    left: -46px;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Warranty / A/S Section */
+.warranty-section {
+  padding: 100px 0;
+}
+.warranty-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  margin-bottom: 32px;
+}
+.warranty-card {
+  text-align: center;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 50px 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.warranty-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+.warranty-card:hover::after {
+  transform: scaleX(1);
+}
+.warranty-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.warranty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+}
+.warranty-card h3 {
+  font-size: 1.25rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.warranty-period {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 16px;
+  line-height: 1;
+}
+.warranty-card p {
+  color: var(--secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+.warranty-note {
+  text-align: center;
+  color: var(--secondary);
+  font-size: 0.9rem;
+  padding: 16px 24px;
+  background: var(--bg-light);
+  border-radius: 8px;
+  border: 1px dashed var(--border);
+  max-width: 700px;
+  margin: 0 auto;
+}
